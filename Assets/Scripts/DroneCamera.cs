@@ -16,13 +16,14 @@ public class DroneCamera : MonoBehaviour
 
     private void Update()
     {
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
+        Movement();
+        ClampPostion();
+        LocalRotation();
+        UPDown();
+    }
 
-        child.transform.localEulerAngles = new Vector3(-5 * v, -5 * h, 0);
-
-       
-
+    private void Movement()
+    {
         if (Input.GetKey(KeyCode.W))
         {
             transform.Translate(Vector3.forward * droneSpeed * Time.deltaTime, Space.World);
@@ -39,10 +40,23 @@ public class DroneCamera : MonoBehaviour
         {
             transform.Translate(Vector3.right * droneSpeed * Time.deltaTime, Space.World);
         }
-
-        UPDown();
     }
 
+    private void ClampPostion()
+    {
+        Vector3 clampedPosition = transform.position;
+        clampedPosition.z = Mathf.Clamp(clampedPosition.z, -33f, 33f);
+        clampedPosition.x = Mathf.Clamp(clampedPosition.x, -30f, 30f);
+        transform.position = clampedPosition;
+    }
+
+    private void LocalRotation()
+    {
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
+
+        child.transform.localEulerAngles = new Vector3(-5 * v, -5 * h, 0);
+    }
 
     private void UPDown()
     {
