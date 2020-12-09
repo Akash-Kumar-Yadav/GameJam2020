@@ -329,6 +329,7 @@ GameObject:
   - component: {fileID: 23809032511686808}
   - component: {fileID: 64739092858258102}
   - component: {fileID: 1955291112}
+  - component: {fileID: 6503162089284700265}
   m_Layer: 0
   m_Name: Car_6G
   m_TagString: Untagged
@@ -430,3 +431,19 @@ MonoBehaviour:
   pathCreator: {fileID: 0}
   end: 0
   speed: 5
+--- !u!208 &6503162089284700265
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590206702830092}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.23, y: 0.86300004, z: 2.6100001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 0
+  m_Center: {x: 0, y: 1.0630001, z: -0.079}
+  m_TimeToStationary: 0.5

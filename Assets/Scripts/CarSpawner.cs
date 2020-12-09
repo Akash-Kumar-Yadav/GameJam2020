@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class CarSpawner : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class CarSpawner : MonoBehaviour
     {
         GameObject obj = Instantiate(Prefabs[Random.Range(0, Prefabs.Length)], transform.position, Quaternion.identity);
         obj.GetComponent<CarAI>().pathCreator = path;
+       
         yield return new WaitForSeconds(spawnTime);
         i++;
         if (i < numberOfCars)

@@ -171,6 +171,7 @@ GameObject:
   - component: {fileID: 23223122420387580}
   - component: {fileID: 64282175704073122}
   - component: {fileID: 7574694019323585875}
+  - component: {fileID: 5891536940730980413}
   m_Layer: 0
   m_Name: Car_18C
   m_TagString: Untagged
@@ -272,6 +273,22 @@ MonoBehaviour:
   pathCreator: {fileID: 0}
   end: 0
   speed: 5
+--- !u!208 &5891536940730980413
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307635527795650}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.404, y: 1.0380001, z: 3.505}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 0
+  m_Center: {x: 0, y: 1.534, z: 0.46100003}
+  m_TimeToStationary: 0.5
 --- !u!1 &1739067607676298
 GameObject:
   m_ObjectHideFlags: 0

@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 23194435166505700}
   - component: {fileID: 64934544590337554}
   - component: {fileID: 6525363564783458223}
+  - component: {fileID: -8645424410854438459}
   m_Layer: 0
   m_Name: Car_14I
   m_TagString: Untagged
@@ -193,6 +194,22 @@ MonoBehaviour:
   pathCreator: {fileID: 0}
   end: 0
   speed: 5
+--- !u!208 &-8645424410854438459
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106068356828452}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.3240001, y: 0.75900006, z: 2.8890002}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 0
+  m_Center: {x: 0, y: 0.93900007, z: 0.007}
+  m_TimeToStationary: 0.5
 --- !u!1 &1659635745859552
 GameObject:
   m_ObjectHideFlags: 0

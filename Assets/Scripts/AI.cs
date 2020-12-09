@@ -6,18 +6,44 @@ using UnityEngine.AI;
 public class AI : MonoBehaviour
 {
     [SerializeField] NavMeshAgent agent;
-    [SerializeField] Transform[] wayPoints;
-    [SerializeField] int num = 0;
-    [SerializeField] float speed;
+    public GameObject[] wayPoints;
+    public int num = 0;
+    public int rNum = 48;
+    public bool reverse;
 
+    private void Start()
+    {
+        agent = GetComponent<NavMeshAgent>();
+    }
     private void Update()
     {
-        // transform.position = Vector3.MoveTowards(transform.position, wayPoints[num].position, speed);
-        agent.SetDestination(wayPoints[num].position);
-        if (Vector3.Distance(transform.position, wayPoints[num].position) < .3f)
-        {     
-            num++;
+       
+        if (!reverse)
+        {
+            agent.SetDestination(wayPoints[num].transform.position);
+            if (Vector3.Distance(transform.position, wayPoints[num].transform.position) < .8f)
+            {
+                num++;
+                if (num > wayPoints.Length-1)
+                {
+                    num = 0;
+                    
+                }
+            }
         }
+        else
+        {
+            agent.SetDestination(wayPoints[rNum].transform.position);
+            if (Vector3.Distance(transform.position, wayPoints[rNum].transform.position) < .8f)
+            {
+                rNum--;
+                if (rNum < 0)
+                {
+                    rNum = 47;
+                }
+            }
+        }
+        
     }
 
 }
