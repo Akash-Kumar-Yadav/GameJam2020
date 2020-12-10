@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class DroneCamera : MonoBehaviour
 {
-     [SerializeField] int droneSpeed = 5;
+    [SerializeField] int droneSpeed = 5;
     [SerializeField] float moveSpeed;
     [SerializeField] float turnSpeed;
     private float velocity;
     [SerializeField] Vector2 min;
     [SerializeField] Vector2 max;
     [SerializeField] GameObject child;
-
-   
 
     private void Update()
     {
@@ -27,6 +25,7 @@ public class DroneCamera : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             transform.Translate(Vector3.forward * droneSpeed * Time.deltaTime, Space.World);
+            
         }
         else if (Input.GetKey(KeyCode.S))
         {
@@ -55,7 +54,7 @@ public class DroneCamera : MonoBehaviour
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
-        child.transform.localEulerAngles = new Vector3(-5 * v, -5 * h, 0);
+        child.transform.localEulerAngles = new Vector3(-8 * v, -8 * h, 0);
     }
 
     private void UPDown()

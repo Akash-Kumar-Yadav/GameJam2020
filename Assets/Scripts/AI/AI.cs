@@ -26,8 +26,7 @@ public class AI : MonoBehaviour
                 num++;
                 if (num > wayPoints.Length-1)
                 {
-                    num = 0;
-                    
+                    num = 0;    
                 }
             }
         }
