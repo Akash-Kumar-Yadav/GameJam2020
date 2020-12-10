@@ -8804,11 +8804,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 814090075}
-  - component: {fileID: 814090076}
   - component: {fileID: 814090077}
   - component: {fileID: 814090078}
   m_Layer: 8
-  m_Name: Drone
+  m_Name: DroneSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8821,32 +8820,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 814090074}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.5150381, y: 0, z: 0, w: 0.85716736}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 561710875}
   m_Father: {fileID: 1738888957}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &814090076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 814090074}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb17f239252216b48851acfd07f5032a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  droneSpeed: 7
-  moveSpeed: 0.7
-  turnSpeed: 2
-  min: {x: 0, y: 0}
-  max: {x: 0, y: 0}
-  child: {fileID: 561710874}
+  m_LocalEulerAnglesHint: {x: 62, y: 0, z: 0}
 --- !u!82 &814090077
 AudioSource:
   m_ObjectHideFlags: 0
@@ -18225,6 +18206,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1738888957}
+  - component: {fileID: 1738888958}
+  - component: {fileID: 1738888959}
   m_Layer: 8
   m_Name: Drone
   m_TagString: Untagged
@@ -18239,14 +18222,46 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1738888956}
-  m_LocalRotation: {x: 0.51503813, y: 0, z: 0, w: 0.8571673}
-  m_LocalPosition: {x: 30, y: 15.910325, z: 16}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 16.43, y: 15.910325, z: 34.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 814090075}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 62.000004, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1738888958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738888956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb17f239252216b48851acfd07f5032a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  droneSpeed: 7
+  moveSpeed: 0.7
+  turnSpeed: 2
+  tilting: 13
+  min: {x: 0, y: 0}
+  max: {x: 0, y: 0}
+  child: {fileID: 561710874}
+--- !u!114 &1738888959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738888956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a6b88995834aa04a806b5b92042e0cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sensitivity: 2
 --- !u!1001 &1743899342
 PrefabInstance:
   m_ObjectHideFlags: 0
