@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class RayCastScript : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class RayCastScript : MonoBehaviour
     [SerializeField] Transform target;
 
     [SerializeField] GameObject UI;
+    [SerializeField] TMP_Text UIText;
     
     int numberOfCop = 0;
     int numberOfNurse = 0;
@@ -27,17 +29,15 @@ public class RayCastScript : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {
-            if (hit.collider.CompareTag("AI"))
+            if (hit.collider.CompareTag("NoMask") || hit.collider.CompareTag("Infected"))
             {
                 timer += Time.deltaTime;
                 if (timer > .5f)
                 {
                     target = hit.transform;
-                    SettingUIPos();
-                    CheckingForTarget();
+                    SettingUIPos();                   
                     timer = 0;
-                }
-                
+                }               
             }
             else
             {
@@ -45,18 +45,15 @@ public class RayCastScript : MonoBehaviour
                 target = null;
                 UI.SetActive(false);
             }
-
+            CheckingForTarget();
         }
-       
-
     }
-
     private void SettingUIPos()
     {
+        UIText.text = target.gameObject.tag;
         UI.transform.position = new Vector3(target.transform.position.x, target.transform.position.y + 2, target.transform.position.z);
         UI.SetActive(true);
     }
-
     private void CheckingForTarget()
     {
         if (target != null)
@@ -65,7 +62,9 @@ public class RayCastScript : MonoBehaviour
             {
                 UI.SetActive(false);
                 target.GetComponent<SelectAI>().StopMove();
-
+                
+               
+               
                 ResetNumberOfCop();
 
                 cop[numberOfCop].GetComponent<Mover>().target = target;
@@ -74,6 +73,9 @@ public class RayCastScript : MonoBehaviour
             {
                 UI.SetActive(false);
                 target.GetComponent<SelectAI>().StopMove();
+               
+                
+              
                 ResetNumberOfNurse();
                 nurse[numberOfCop].GetComponent<Mover>().target = target;
             }
@@ -83,7 +85,7 @@ public class RayCastScript : MonoBehaviour
     private void ResetNumberOfNurse()
     {
         numberOfNurse++;
-        if (numberOfNurse > nurse.Length)
+        if (numberOfNurse > nurse.Length-1)
         {
             numberOfNurse = 0;
         }
@@ -92,7 +94,7 @@ public class RayCastScript : MonoBehaviour
     private void ResetNumberOfCop()
     {
         numberOfCop++;
-        if (numberOfCop > cop.Length)
+        if (numberOfCop > cop.Length-1)
         {
             numberOfCop = 0;
         }

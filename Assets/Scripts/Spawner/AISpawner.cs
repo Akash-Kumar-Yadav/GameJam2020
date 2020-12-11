@@ -8,6 +8,7 @@ public class AISpawner : MonoBehaviour
     [SerializeField] GameObject[] wayPoints;
     [SerializeField] GameObject[] Prefabs;
     [SerializeField] int numberOfAI;
+    [SerializeField] InfectAI infectAI;
     private void Start()
     {
         wayPoints = GameObject.FindGameObjectsWithTag("WayPoints");
@@ -21,7 +22,7 @@ public class AISpawner : MonoBehaviour
             var ai = obj.GetComponent<AI>();
             ai.GetComponent<NavMeshAgent>().speed = Random.Range(1.5f, 2.5f);
             ai.wayPoints = wayPoints;
-
+            infectAI.Ai.Add(ai.gameObject);
             if(Random.value > .5f)
             {
                 ai.reverse = true;

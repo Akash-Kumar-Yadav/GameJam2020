@@ -6,6 +6,10 @@ TagManager:
   tags:
   - WayPoints
   - AI
+  - Doc
+  - Cop
+  - NoMask
+  - Infected
   layers:
   - Default
   - TransparentFX
