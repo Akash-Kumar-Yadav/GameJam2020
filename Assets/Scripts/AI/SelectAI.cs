@@ -21,7 +21,6 @@ public class SelectAI : MonoBehaviour
     float currentSpeed;
     NavMeshAgent navMeshAgent;
 
-
     private void Awake()
     {
         navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
@@ -38,10 +37,8 @@ public class SelectAI : MonoBehaviour
             
             currentSpeed = navMeshAgent.speed;
             navMeshAgent.speed = 0f;
-
         }
     }
-
     public void StopMove()
     {
         navMeshAgent.enabled = false;
@@ -60,7 +57,6 @@ public class SelectAI : MonoBehaviour
             timer = 0;
         }
     }
-
     private void OnMouseExit()
     {
         transform.DOScale(defaultSize, Duration);

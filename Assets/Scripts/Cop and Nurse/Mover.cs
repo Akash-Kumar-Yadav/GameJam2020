@@ -8,25 +8,19 @@ public class Mover : MonoBehaviour
 {
     public Transform target;
     NavMeshAgent agent;
-    Rigidbody rb;
+  
     Vector3 currentPosition;
 
     [SerializeField] float timer;
-    [SerializeField] int maxTime = 3;   
-
+    [SerializeField] int maxTime = 3;
+    [SerializeField] UIHealing uIHealing;
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         currentPosition = transform.position;
-        rb = GetComponent<Rigidbody>();
-        StartCoroutine(RB());
+       
     }
-
-    IEnumerator RB()
-    {
-        yield return new WaitForSeconds(1);
-        rb.Sleep();
-    }
+   
     private void Update()
     {
         if (target == null)
@@ -43,6 +37,7 @@ public class Mover : MonoBehaviour
         if (Vector3.Distance(transform.position, target.position) < 2)
         {
             timer += Time.deltaTime;
+            uIHealing.Healing(timer, maxTime);
             if (timer > maxTime)
             {
                 target.GetComponent<SelectAI>().CanMove();

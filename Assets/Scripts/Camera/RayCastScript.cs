@@ -62,8 +62,6 @@ public class RayCastScript : MonoBehaviour
             {
                 UI.SetActive(false);
                 target.GetComponent<SelectAI>().StopMove();
-                
-               
                
                 ResetNumberOfCop();
 
@@ -73,9 +71,7 @@ public class RayCastScript : MonoBehaviour
             {
                 UI.SetActive(false);
                 target.GetComponent<SelectAI>().StopMove();
-               
                 
-              
                 ResetNumberOfNurse();
                 nurse[numberOfCop].GetComponent<Mover>().target = target;
             }

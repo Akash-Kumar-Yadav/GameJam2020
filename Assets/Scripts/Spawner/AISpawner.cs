@@ -23,6 +23,7 @@ public class AISpawner : MonoBehaviour
             ai.GetComponent<NavMeshAgent>().speed = Random.Range(1.5f, 2.5f);
             ai.wayPoints = wayPoints;
             infectAI.Ai.Add(ai.gameObject);
+
             if(Random.value > .5f)
             {
                 ai.reverse = true;

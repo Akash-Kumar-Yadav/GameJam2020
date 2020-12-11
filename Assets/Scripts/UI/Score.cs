@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class Score : MonoBehaviour
 {
-    [SerializeField] Text doctext;
-    [SerializeField] Text coptext;
+    [SerializeField] TMP_Text doctext;
+    [SerializeField] TMP_Text coptext;
 
     
     int doc;
