@@ -2840,7 +2840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Duration: 0.2
-  scaleSize: {x: 1.5, y: 1.5, z: 1.5}
+  scaleSize: {x: 1.2, y: 1.2, z: 1.2}
   defaultSize: {x: 1, y: 1, z: 1}
   audio: {fileID: 0}
   audioClip: {fileID: 8300000, guid: 05b4f9bc671a265429d3e5b4e7cefe74, type: 3}

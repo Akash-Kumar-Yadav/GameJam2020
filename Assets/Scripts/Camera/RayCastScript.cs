@@ -11,10 +11,11 @@ public class RayCastScript : MonoBehaviour
 
     [SerializeField] Transform target;
 
-   // [SerializeField] GameObject UI;
+    [SerializeField] GameObject UI;
     
     int numberOfCop = 0;
     int numberOfNurse = 0;
+    float timer;
     private void Start()
     {
         camera = Camera.main;
@@ -28,43 +29,73 @@ public class RayCastScript : MonoBehaviour
         {
             if (hit.collider.CompareTag("AI"))
             {
-                target = hit.transform;
-               // UI.transform.position = new Vector3(target.transform.position.x, target.transform.position.y + 1, target.transform.position.z);
-              //  UI.SetActive(true);
+                timer += Time.deltaTime;
+                if (timer > .5f)
+                {
+                    target = hit.transform;
+                    SettingUIPos();
+                    CheckingForTarget();
+                    timer = 0;
+                }
+                
             }
             else
             {
+                timer = 0;
                 target = null;
+                UI.SetActive(false);
             }
-          
+
         }
-        if(target != null)
+       
+
+    }
+
+    private void SettingUIPos()
+    {
+        UI.transform.position = new Vector3(target.transform.position.x, target.transform.position.y + 2, target.transform.position.z);
+        UI.SetActive(true);
+    }
+
+    private void CheckingForTarget()
+    {
+        if (target != null)
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-               // UI.SetActive(false);
+                UI.SetActive(false);
                 target.GetComponent<SelectAI>().StopMove();
-                numberOfCop++;
-                if(numberOfCop > cop.Length)
-                {
-                    numberOfCop = 0;
-                }
+
+                ResetNumberOfCop();
+
                 cop[numberOfCop].GetComponent<Mover>().target = target;
             }
-            else if(Input.GetKeyDown(KeyCode.E))
+            else if (Input.GetKeyDown(KeyCode.E))
             {
-               // UI.SetActive(false);
+                UI.SetActive(false);
                 target.GetComponent<SelectAI>().StopMove();
-                numberOfNurse++;
-                if (numberOfNurse > nurse.Length)
-                {
-                    numberOfNurse = 0;
-                }
+                ResetNumberOfNurse();
                 nurse[numberOfCop].GetComponent<Mover>().target = target;
             }
         }
-       
     }
 
-   
+    private void ResetNumberOfNurse()
+    {
+        numberOfNurse++;
+        if (numberOfNurse > nurse.Length)
+        {
+            numberOfNurse = 0;
+        }
+    }
+
+    private void ResetNumberOfCop()
+    {
+        numberOfCop++;
+        if (numberOfCop > cop.Length)
+        {
+            numberOfCop = 0;
+        }
+    }
+
 }
