@@ -8,7 +8,11 @@ public class DroneTurning : MonoBehaviour
     float mouseX;
     void Update()
     {
-        mouseX += sensitivity*Input.GetAxis("Mouse X");      
-        transform.rotation = Quaternion.Euler(0, mouseX , 0);
+        if (Input.GetMouseButton(0))
+        {
+            mouseX += sensitivity * Input.GetAxis("Mouse X");
+            transform.rotation = Quaternion.Euler(0, mouseX, 0);
+        }
+       
     }
 }

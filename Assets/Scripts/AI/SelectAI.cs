@@ -9,15 +9,22 @@ using UnityEngine.AI;
 public class SelectAI : MonoBehaviour
 {
     [SerializeField] float Duration = .2f;
+
     [SerializeField] Vector3 scaleSize;
     [SerializeField] Vector3 defaultSize;
+
     [SerializeField] AudioSource audio;
     [SerializeField] AudioClip audioClip;
+
     bool entered;
     float timer;
     float currentSpeed;
+    NavMeshAgent navMeshAgent;
+
+
     private void Awake()
     {
+        navMeshAgent = gameObject.GetComponent<NavMeshAgent>();
         audio = GetComponent<AudioSource>();
         audio.playOnAwake = false;
         entered = true;
@@ -28,14 +35,24 @@ public class SelectAI : MonoBehaviour
         {
             transform.DOScale(scaleSize, Duration).OnComplete(gg);
             entered = false;
-            currentSpeed = gameObject.GetComponent<NavMeshAgent>().speed;
-            gameObject.GetComponent<NavMeshAgent>().speed = .5f;
+            
+            currentSpeed = navMeshAgent.speed;
+            navMeshAgent.speed = 0f;
 
-        } 
+        }
     }
 
-    private void Update()
+    public void StopMove()
     {
+        navMeshAgent.enabled = false;
+    }
+    public void CanMove()
+    {
+        navMeshAgent.enabled = true;
+    }
+    private void Update()
+    {       
+
         timer += Time.deltaTime;
         if(timer > 1)
         {
@@ -47,7 +64,7 @@ public class SelectAI : MonoBehaviour
     private void OnMouseExit()
     {
         transform.DOScale(defaultSize, Duration);
-        gameObject.GetComponent<NavMeshAgent>().speed = currentSpeed;
+        navMeshAgent.speed = currentSpeed;
     }
 
     private void gg()

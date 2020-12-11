@@ -20,6 +20,7 @@ public class AI : MonoBehaviour
        
         if (!reverse)
         {
+            if (!agent.enabled) { return; }
             agent.SetDestination(wayPoints[num].transform.position);
             if (Vector3.Distance(transform.position, wayPoints[num].transform.position) < .8f)
             {
@@ -32,6 +33,7 @@ public class AI : MonoBehaviour
         }
         else
         {
+            if (!agent.enabled) { return; }
             agent.SetDestination(wayPoints[rNum].transform.position);
             if (Vector3.Distance(transform.position, wayPoints[rNum].transform.position) < .8f)
             {
