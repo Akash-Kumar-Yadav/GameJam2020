@@ -14,6 +14,7 @@ public class Mover : MonoBehaviour
     [SerializeField] float timer;
     [SerializeField] int maxTime = 3;
     [SerializeField] UIHealing uIHealing;
+    
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -37,13 +38,13 @@ public class Mover : MonoBehaviour
         if (Vector3.Distance(transform.position, target.position) < 2)
         {
             timer += Time.deltaTime;
-            uIHealing.Healing(timer, maxTime);
+            uIHealing.Healing(timer, maxTime,target.gameObject.tag);
             if (timer > maxTime)
             {
                 target.GetComponent<SelectAI>().CanMove();
+                target.transform.tag = "AI";
                 target = null;
-                timer = 0;
-               
+                timer = 0;              
             }
         }
     }

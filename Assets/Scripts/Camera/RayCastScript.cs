@@ -73,7 +73,7 @@ public class RayCastScript : MonoBehaviour
                 target.GetComponent<SelectAI>().StopMove();
                 
                 ResetNumberOfNurse();
-                nurse[numberOfCop].GetComponent<Mover>().target = target;
+                nurse[numberOfNurse].GetComponent<Mover>().target = target;
             }
         }
     }

@@ -34,4 +34,18 @@ public class InfectAI : MonoBehaviour
         infectedText.text = "Infected: " + infect;
         NoMaskText.text = "No Mask: " + noMask;
     }
+
+    private void Update()
+    {
+        infectedText.text = "Infected: " + infect;
+        NoMaskText.text = "No Mask: " + noMask;
+    }
+    public void SubInfected()
+    {
+         infect--;
+    }
+    public void SubNoMask()
+    {
+         noMask--;
+    }
 }

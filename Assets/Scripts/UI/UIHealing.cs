@@ -10,8 +10,14 @@ public class UIHealing : MonoBehaviour
     [SerializeField] Image fillbar;
     [SerializeField] GameObject BG;
     [SerializeField] TMP_Text money;
+    [SerializeField] TMP_Text fineText;
+    private int docFine = 300;
+    private int copFine = 600;
+    private static int currentFine = 0;
 
-    public void Healing(float progress,float maxTime)
+    [SerializeField] InfectAI infectAI;
+
+    public void Healing(float progress,float maxTime,string tag)
     {
         BG.gameObject.SetActive(true);
        
@@ -19,9 +25,26 @@ public class UIHealing : MonoBehaviour
         if(fillbar.fillAmount >= 1)
         {
             BG.gameObject.SetActive(false);
-            money.gameObject.SetActive(true);
-            money.text = "$300";          
-            money.rectTransform.DOScale(.01f, 2);
+            
+           if(tag == "Infected" && gameObject.transform.parent.tag == "Doc")
+           {
+                money.gameObject.SetActive(true);
+                money.text = "$"+docFine;
+                currentFine += docFine;
+                fineText.text = "$" + currentFine;
+                infectAI.SubInfected();
+                money.rectTransform.DOScale(.01f, 2);
+           }
+            else if (tag == "NoMask" && gameObject.transform.parent.tag == "Cop")
+            {
+                money.gameObject.SetActive(true);
+                money.text = "$"+copFine;
+                currentFine += copFine;
+                fineText.text = "$" + currentFine;
+                infectAI.SubNoMask();
+                money.rectTransform.DOScale(.01f, 2);
+            }
+
         }
     }
 
