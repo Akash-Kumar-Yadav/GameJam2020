@@ -26,19 +26,22 @@ public class DroneCamera : MonoBehaviour
         if (Input.GetKey(KeyCode.W))
         {
             transform.Translate(Vector3.forward * droneSpeed * Time.deltaTime);
-            
+           
         }
         else if (Input.GetKey(KeyCode.S))
         {
             transform.Translate(Vector3.back * droneSpeed * Time.deltaTime);
+            
         }
         else if (Input.GetKey(KeyCode.A))
         {
             transform.Translate(Vector3.left * droneSpeed * Time.deltaTime);
+            
         }
         else if (Input.GetKey(KeyCode.D))
         {
             transform.Translate(Vector3.right * droneSpeed * Time.deltaTime);
+            
         }
     }
 
