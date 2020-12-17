@@ -1,0 +1,174 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!244 &-3899802797988503842
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 3dc25c084f738194285b444f8cddfd3c
+  m_EffectName: Attenuation
+  m_MixLevel: 9424e3484660abb4f82e5a84f1f7b45e
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!243 &-3448970346945976722
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ambience urban city
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 04cfcba7631dce74e88a8d58eb46bb81
+  m_Children: []
+  m_Volume: 9a5314734ee626c46a3f2454ca88bab9
+  m_Pitch: 363618c527bba41438de6f52afc36998
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -3899802797988503842}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &-473250831798921903
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 5c12996aec843ed48b1aeb661fb137b7
+  m_EffectName: Attenuation
+  m_MixLevel: 8f4c53f9a59daad43a964b53f5fbc0f5
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!241 &24100000
+AudioMixerController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: environment
+  m_OutputGroup: {fileID: 0}
+  m_MasterGroup: {fileID: 24300002}
+  m_Snapshots:
+  - {fileID: 24500006}
+  m_StartSnapshot: {fileID: 24500006}
+  m_SuspendThreshold: -80
+  m_EnableSuspend: 1
+  m_UpdateMode: 0
+  m_ExposedParameters: []
+  m_AudioMixerGroupViews:
+  - guids:
+    - 719616ff7ebbe014aa58fba75c8bb360
+    - 04cfcba7631dce74e88a8d58eb46bb81
+    - 33e2c39f5ee7f284da10760b367ee1dd
+    - a5ee3cc9ec6940c4582536efbd842c2e
+    name: View
+  m_CurrentViewIndex: 0
+  m_TargetSnapshot: {fileID: 24500006}
+--- !u!243 &24300002
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Master
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 719616ff7ebbe014aa58fba75c8bb360
+  m_Children:
+  - {fileID: 6877122104020784720}
+  - {fileID: 1430866196306156672}
+  - {fileID: -3448970346945976722}
+  m_Volume: 1a99453873a55ed4c959aaae84dc7bd5
+  m_Pitch: 1ef0607ddcfd8274dad03f10fa0cb235
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 24400004}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &24400004
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: df24bf8d6506ced488b9f0273e622ec8
+  m_EffectName: Attenuation
+  m_MixLevel: 8907eb5aaaee28b499305f205b8d9438
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!245 &24500006
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Snapshot
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: 31db53c6190c0154aa697bb39390eb1d
+  m_FloatValues:
+    1a99453873a55ed4c959aaae84dc7bd5: -9.833286
+  m_TransitionOverrides: {}
+--- !u!243 &1430866196306156672
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: public place town
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 33e2c39f5ee7f284da10760b367ee1dd
+  m_Children: []
+  m_Volume: c4c3fe726c2de5c4aaa560686c81eea1
+  m_Pitch: cfad13e86945b4f48a832a5b2a9aa7bc
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 8391669163887456404}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!243 &6877122104020784720
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: public place city street
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: a5ee3cc9ec6940c4582536efbd842c2e
+  m_Children: []
+  m_Volume: 1b88d1738e03fe443a2c09270db7e2ea
+  m_Pitch: 722dbebc0a3182d44a3472a23dd86fce
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -473250831798921903}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &8391669163887456404
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: a5d569f9ffcf87e4183cf07f72b79d3a
+  m_EffectName: Attenuation
+  m_MixLevel: 80e3fefa4cc32844682e45946c03c5e3
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0

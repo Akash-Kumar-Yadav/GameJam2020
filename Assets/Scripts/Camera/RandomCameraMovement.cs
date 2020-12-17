@@ -35,6 +35,6 @@ public class RandomCameraMovement : MonoBehaviour
         var y = Random.Range(min.y, max.y);
 
        // newRot = Quaternion.Euler(0, Random.Range(1, 5), 0);
-        newPos = new Vector3(x, 15, y);
+        newPos = new Vector3(x, 25, y);
     }
 }

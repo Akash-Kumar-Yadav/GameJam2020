@@ -10,8 +10,7 @@ public class DroneSound : MonoBehaviour
 
     private void Start()
     {
-        audio = GetComponent<AudioSource>();
-        
+        audio = GetComponent<AudioSource>();       
     }
 
     private void Update()
@@ -46,7 +45,7 @@ public class DroneSound : MonoBehaviour
         }
         else
         {
-            audio.pitch = 0;
+            audio.pitch = defaultPitch;
         }
 
     }
