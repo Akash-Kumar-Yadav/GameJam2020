@@ -17,7 +17,7 @@ public class RayCastScript : MonoBehaviour
     
     int numberOfCop = 0;
     int numberOfNurse = 0;
-    float timer;
+   
     private void Start()
     {
         camera = Camera.main;
@@ -25,23 +25,19 @@ public class RayCastScript : MonoBehaviour
 
     private void Update()
     {
+        if (GameOverScript.b_gameOver) { return; }
+
         Ray ray = camera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {
             if (hit.collider.CompareTag("NoMask") || hit.collider.CompareTag("Infected"))
-            {
-                timer += Time.deltaTime;
-                if (timer > .5f)
-                {
-                    target = hit.transform;
-                    SettingUIPos();                   
-                    timer = 0;
-                }               
+            {              
+                target = hit.transform;
+                SettingUIPos();                   
             }
             else
-            {
-                timer = 0;
+            {             
                 target = null;
                 UI.SetActive(false);
             }

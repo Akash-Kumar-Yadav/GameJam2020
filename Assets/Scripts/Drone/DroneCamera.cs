@@ -15,6 +15,7 @@ public class DroneCamera : MonoBehaviour
 
     private void Update()
     {
+        if (GameOverScript.b_gameOver) { return; }
         Movement();
         ClampPostion();
         LocalRotation();

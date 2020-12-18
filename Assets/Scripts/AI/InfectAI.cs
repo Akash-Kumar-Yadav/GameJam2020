@@ -15,6 +15,21 @@ public class InfectAI : MonoBehaviour
     [SerializeField] TMP_Text infectedText;
     [SerializeField] TMP_Text NoMaskText;
 
+    public int getInfected
+    {
+        get
+        {
+            return infect;
+        }
+    }
+    public int getNoMask
+    {
+        get
+        {
+            return noMask;
+        }
+    }
+
     IEnumerator Start()
     {
         infectedText.text = "Infected: ..." ;

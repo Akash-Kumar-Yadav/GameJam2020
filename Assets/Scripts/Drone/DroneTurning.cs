@@ -8,6 +8,8 @@ public class DroneTurning : MonoBehaviour
     float mouseX;
     void Update()
     {
+        if (GameOverScript.b_gameOver) { return; }
+
         if (Input.GetMouseButton(0))
         {
             mouseX += sensitivity * Input.GetAxis("Mouse X");
@@ -15,4 +17,6 @@ public class DroneTurning : MonoBehaviour
         }
        
     }
+
+
 }

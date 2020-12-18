@@ -24,6 +24,7 @@ public class Mover : MonoBehaviour
    
     private void Update()
     {
+        if (GameOverScript.b_gameOver) { return; }
         if (target == null)
         {
             if (transform.position != currentPosition)

@@ -11,7 +11,7 @@ public class AISpawner : MonoBehaviour
     [SerializeField] InfectAI infectAI;
     private void Start()
     {
-        wayPoints = GameObject.FindGameObjectsWithTag("WayPoints");
+       // wayPoints = GameObject.FindGameObjectsWithTag("WayPoints");
 
         for (int i = 0; i < numberOfAI; i++)
         {
