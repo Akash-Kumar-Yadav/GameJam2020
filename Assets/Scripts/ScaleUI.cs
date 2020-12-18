@@ -20,6 +20,7 @@ namespace Scale
         private void Start()
         {
             rectTransform = GetComponent<RectTransform>();
+            if(audioSource == null)
             audioSource = FindObjectOfType<AudioSource>();
         }
         public void OnPointerEnter(PointerEventData eventData)
